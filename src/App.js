@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { HashRouter, Route } from 'react-router-dom';
+import Home from './pages/Home';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Fragment = React.Fragment;
+
+class App extends Component {
+
+  render() {
+
+    return (
+      <HashRouter>
+        <Fragment>
+          <Route exact path="/" component={Home} />
+        </Fragment>
+      </HashRouter>
+    );
+  }
 }
 
-export default App;
+let mapStateToProps = state => {
+  return {
+    width: state.windowWidth,
+    height: state.windowHeight
+  }
+};
+
+export default connect(mapStateToProps)(App);
