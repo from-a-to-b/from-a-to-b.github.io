@@ -115,7 +115,7 @@ class MapContainer extends Component {
       let { data } = this.props;
       
       if ((_.isNull(prevProps.data) && !_.isNull(data)) || data.id !== prevProps.data.id) {
-
+        
         let bbox = turf.bbox(data.trip);
 
         this.map.getSource('trip-path').setData(data.trip);

@@ -5,8 +5,6 @@ import { windowResize, changeData, changeDataStatus } from '../actions';
 import axios from 'axios';
 import styled from 'styled-components';
 
-const { ipcRenderer } = window.require('electron');
-
 const ColorBack = styled.div`
   mix-blend-mode: screen;
   position:fixed;
@@ -31,63 +29,22 @@ class Home extends Component {
   componentDidMount(){
 
     window.addEventListener('resize', this.resizeHandler.bind(this));
-    document.body.addEventListener('keyup', this.handleKeyup.bind(this));
-    document.body.addEventListener('click', this.handleBodyClick.bind(this), true); 
-    ipcRenderer.on('print_completed', this.handlePrintComplete.bind(this));
-    setTimeout(() => {
-      window.location.reload();
-    }, 3600000 / 2); 
-
     this.resizeHandler();
-    this.loadDataNotPrint();
+    this.loadData();
   }
 
-  handlePrintComplete(e){
-    console.log("ipcRenderer print complete");
-    this.props.dispatch(changeDataStatus('loaded'));
-  }
 
-  handleBodyClick(e){
-    if (this.props.dataStatus !== 'loading') {
-      this.props.dispatch(changeDataStatus('loading'));
-      ipcRenderer.send('loading');
-      this.loadData();
-    }
-  }
-
-  handleKeyup(e){
-    if (e.keyCode === 32 && this.props.dataStatus !== 'loading') {
-      this.props.dispatch(changeDataStatus('loading'));
-      ipcRenderer.send('loading');
-      this.loadData();
-    }
-  }
-
-  loadDataNotPrint(){
-    axios.get('http://localhost:8080/api/trips/random.json')
-      .then((response) =>{
-        // debugger;
-        this.props.dispatch(changeData(response.data));
-        this.props.dispatch(changeDataStatus('loaded'));
-      })
-      .catch((error) => {
-        // handle error
-        this.loadDataNotPrint();
-        console.log(error);
-      })
-  }
 
   loadData(){
-    axios.get('http://localhost:8080/api/trips/random.json')
+    axios.get('https://from-a-to-b-api.herokuapp.com/api/speculative_trips/random.json')
       .then((response) =>{
         // debugger;
-        this.props.dispatch(changeData(response.data));
+        this.props.dispatch(changeData(response.data.result));
         this.props.dispatch(changeDataStatus('loaded'));
-        ipcRenderer.send('pdf-url', {url: response.data.pdf_url});
       })
       .catch((error) => {
         // handle error
-        this.loadData();
+        // this.loadData();
         console.log(error);
       })
       
@@ -137,7 +94,6 @@ class Home extends Component {
           opacity: dataStatus === 'loaded' ? 1 : 0.8,
           mixBlendMode: blendMode
         }}/>
-        <ThreedContainer />
         <MapContainer />
       </Fragment>
     );

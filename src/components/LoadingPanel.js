@@ -55,6 +55,10 @@ class LoadingPanel extends Component {
 
   }
 
+  componentWillUnmount(){
+    clearInterval(this.intervalId);
+  }
+
   render() {
 
     let { dataStatus } = this.props;

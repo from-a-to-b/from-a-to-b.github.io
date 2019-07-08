@@ -9,7 +9,6 @@ import { changeCurrentIdx } from '../actions';
 import { heightPercentage } from '../constants/defaults';
 import { changeData } from '../actions';
 import axios from 'axios';
-const { ipcRenderer } = window.require('electron');
 
 const FullContainer = styled.div`
   position: fixed;
@@ -152,13 +151,12 @@ class ThreedContainer extends Component {
   }
 
   loadData(){
-    axios.get('http://localhost:8080/api/trips/random.json')
+    axios.get('https://from-a-to-b-api.herokuapp.com/api/speculative_trips/random.json')
       .then((response) =>{
         // debugger;
 
 
         this.props.dispatch(changeData(response.data));
-        ipcRenderer.send('pdf-url', {url: response.data.pdf_url});
 
       })
       .catch((error) => {
