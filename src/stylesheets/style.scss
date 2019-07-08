@@ -3,13 +3,12 @@
 $text_color:white;
 
 body {
-  background-color:white;
+  background-color:black;
   font-family: 'Gerstner Programm', sans-serif;
   font-size:14px;
   line-height: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow:hidden;
 }
 
 body, div, p, h1, h2, h3 {
@@ -17,6 +16,7 @@ body, div, p, h1, h2, h3 {
 }
 
 p, span, li {
+  color:darken($text_color, 10);
   word-break: keep-all;
 }
 
@@ -61,7 +61,7 @@ body, div, p, ol, li {
   line-height:1.3em;
   font-style: normal;
   font-weight: 400;
-  color: black;
+  color: white;
   text-rendering: optimizeLegibility;
 }
 
@@ -241,3 +241,6 @@ sup {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+    
+.react-pdf__Page__textContent {display: none;}

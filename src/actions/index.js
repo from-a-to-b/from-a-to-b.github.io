@@ -8,6 +8,15 @@ export const windowResize = (dimension) => {
   }
 }
 
+export const changeSpeculativeTripID = (speculativeTripID) => {
+  return {
+    type: 'CHANGE_SPECULATIVE_TRIP_ID',
+    payload: {
+      speculativeTripID: speculativeTripID
+    }
+  }
+}
+
 export const changeDataStatus = (dataStatus) => {
   return {
     type: 'CHANGE_DATA_STATUS',

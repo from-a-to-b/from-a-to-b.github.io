@@ -7,7 +7,8 @@ export const DEFAULT_STATE = {
   dataStatus: 'init', // loading, loaded
   mapLoaded: false,
   data: null,
-  currentIdx: 0
+  currentIdx: 0,
+  speculativeTripID: null
 };
 
 export const heightPercentage = 0.5;

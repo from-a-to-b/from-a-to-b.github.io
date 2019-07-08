@@ -7,10 +7,11 @@ import { heightPercentage } from '../constants/defaults';
 
 const Fragment = React.Fragment;
 const Container = styled.div`
-  position:fixed;
-  left: 10px;
-  bottom: calc(${heightPercentage * 100}% + 10px);
+  position: absolute;
+  left: 20px;
+  top: 20px;
   z-index: 9;
+  width: calc(50% - 40px);
   line-height: 1.9;
 `;
 

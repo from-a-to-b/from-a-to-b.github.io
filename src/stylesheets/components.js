@@ -1,9 +1,35 @@
 import styled from 'styled-components';
 import mixins from './mixins';
 
-const SectionContainer = styled.section`
-  width: 1000px;
-  margin: 100px auto 200px;
+const FullContainer = styled.section`
+  padding: 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Column = styled.div`
+  width: calc(50% - 25px);
+
+  p { 
+    font-size:1.2em;
+    margin-bottom: 30px;
+    max-width: 600px;
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: #777;
+  }
+`;
+
+const Container = styled.section`
+
+  padding: 20px;
+  width: calc(1000px - 40px);
+  
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Subtitle = styled.h2`
@@ -19,6 +45,8 @@ const AppleBox = styled.div`
 
 export {
   AppleBox,
-  SectionContainer,
-  Subtitle
+  FullContainer,
+  Container,
+  Subtitle,
+  Column,
 };

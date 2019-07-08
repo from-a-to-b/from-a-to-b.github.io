@@ -2,6 +2,11 @@ import { DEFAULT_STATE } from '../constants/defaults';
 
 export default function screenReducer(state = DEFAULT_STATE, action){
   switch(action.type) {
+    case "CHANGE_SPECULATIVE_TRIP_ID":
+      return {
+        ...state,
+        speculativeTripID: action.payload.speculativeTripID
+      }
     case "WINDOW_RESIZE":
       return {
         ...state,
@@ -28,9 +33,9 @@ export default function screenReducer(state = DEFAULT_STATE, action){
         ...state,
         dataStatus: action.payload.dataStatus
       }
+    default:
+      return { ...state };
   }
-
-  return state;
 };
 
 

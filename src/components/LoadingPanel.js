@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { heightPercentage } from '../constants/defaults';
 
 const Container = styled.div`
-  position:fixed;
+  position:absolute;
   left: 50%;
   transform: translate(-50%, 0);
   bottom: calc(${heightPercentage * 100}% + 10px);
-  z-index: 9;
+  z-index: 15;
   line-height: 1.9;
 `;
 

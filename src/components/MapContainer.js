@@ -6,11 +6,7 @@ import * as turf from 'turf';
 import _ from 'lodash';
 
 const MapDiv = styled.div`
-  position: fixed;
-  left: 0;
-  top: ${ heightPercentage * 100}%;
-  width: 100%;
-  height: ${ (1 - heightPercentage) * 100}%;
+  width: 50%;
 `;
 
 class MapContainer extends Component {
@@ -26,14 +22,13 @@ class MapContainer extends Component {
       style: 'mapbox://styles/senseable/cjrb60fbp32ft2sqlsska4fmj',
       zoom: 14,
       // minZoom: 4,
-      center: [-73.988, 40.731]
-      // interactive: false
+      center: [-73.988, 40.731],
+      interactive: false
     });
 
 
     window.map = this.map;
     this.map.on('style.load', this.handleStyleLoad.bind(this));
-    this.animate();
   }
 
 
@@ -134,6 +129,8 @@ class MapContainer extends Component {
         // let result = turf.featureCollection(_.map(data.pois, poi => turf.point(poi.location)));
         // console.log(result);
         // debugger;
+
+        // this.animate();
       }
 
       if (prevProps.currentIdx !== this.props.currentIdx || this.props.currentIdx === 0) {
@@ -164,7 +161,8 @@ class MapContainer extends Component {
 
   render() {
     return (
-      <MapDiv ref={c => { this.refsMapContainer = c; }} className="map-container">
+      <MapDiv ref={c => { this.refsMapContainer = c; }} style={{ height: 
+        645 * this.props.windowWidth * 0.5 / 499 }} className="map-container">
       </MapDiv>
     );
   }
