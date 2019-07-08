@@ -2,11 +2,13 @@
   "name": "from-a-to-b-website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://from-a-to-b.github.io",
   "dependencies": {
     "axios": "^0.18.0",
     "css-loader": "^1.0.1",
     "d3": "^5.7.0",
     "deck.gl": "^6.1.1",
+    "gh-pages": "^2.0.1",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "node-sass": "^4.11.0",
@@ -34,6 +36,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
