@@ -8,9 +8,11 @@ export const DEFAULT_STATE = {
   mapLoaded: false,
   data: null,
   currentIdx: 0,
-  speculativeTripID: null
+  speculativeTripID: null,
+  pdfListIds: []
 };
 
+export const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:8080" : "https://from-a-to-b-api.wonyoung.so"
 export const heightPercentage = 0.5;
 
 // 1448928000

@@ -8,6 +8,15 @@ export const windowResize = (dimension) => {
   }
 }
 
+export const changePdfListIds = (pdfListIds) => {
+  return {
+    type: "CHANGE_PDF_LIST_IDS",
+    payload: {
+      pdfListIds: pdfListIds
+    }
+  }
+}
+
 export const changeSpeculativeTripID = (speculativeTripID) => {
   return {
     type: 'CHANGE_SPECULATIVE_TRIP_ID',

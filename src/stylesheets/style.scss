@@ -9,6 +9,7 @@ body {
   line-height: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x:hidden;
 }
 
 body, div, p, h1, h2, h3 {
@@ -66,40 +67,6 @@ body, div, p, ol, li {
 }
 
 
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-::-webkit-scrollbar-button {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(150, 150, 150, 0.5);
-  border: 9px none #ffffff;
-  border-radius: 50px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(150, 150, 150, 0.8);
-}
-::-webkit-scrollbar-thumb:active {
-  background: rgba(150, 150, 150, 0.8);
-}
-
-::-webkit-scrollbar-track {
-  background: #EFEFEF;
-  border: 0px none #AAAAAA;
-  border-radius: 36px;
-}
-::-webkit-scrollbar-track:hover {
-  background: #DFDFDF;
-}
-::-webkit-scrollbar-track:active {
-  background: #EEEEEE;
-}
-::-webkit-scrollbar-corner {
-  background: transparent;
-}
 
 
 input {  

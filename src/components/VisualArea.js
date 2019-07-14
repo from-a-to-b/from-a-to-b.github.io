@@ -5,6 +5,7 @@ import axios from 'axios';
 import { changeData, changeSpeculativeTripID, changeDataStatus } from '../actions';
 import { FullContainer } from '../stylesheets/components';
 import { MapContainer, InfoPanel, LoadingPanel, PdfArea } from '../components';
+import { API_URL } from '../constants/defaults';
 
 const Fragment = React.Fragment;
 const ColorBack = styled.div`
@@ -40,7 +41,7 @@ class VisualArea extends Component {
   loadData(){
 
     this.props.dispatch(changeDataStatus('loading'));
-    axios.get('https://from-a-to-b-api.herokuapp.com/api/speculative_trips/random.json')
+    axios.get(`${API_URL}/api/speculative_trips/random.json`)
       .then((response) =>{
         // debugger;
         this.props.dispatch(changeData(response.data.result));

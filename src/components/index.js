@@ -10,9 +10,12 @@ import PdfArea from './PdfArea';
 import Description from './Description';
 import PhotoArea from './PhotoArea';
 import Credits from './Credits';
+import PdfListArea from './PdfListArea';
+import ThumbPDF from './ThumbPDF';
 export {
   // GSVPano,
   // ThreedContainer,
+  ThumbPDF,
   FictionContainer,
   MapContainer,
   InfoPanel,
@@ -20,6 +23,7 @@ export {
   IntroArea,
   VisualArea,
   PdfArea,
+  PdfListArea,
   Description,
   PhotoArea,
   Credits

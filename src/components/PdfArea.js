@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { Document, Page, pdfjs } from "react-pdf";
- pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import { API_URL } from '../constants/defaults';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 
 const Container = styled.div`
@@ -46,7 +48,7 @@ class PdfArea extends Component {
           _.isNull(speculativeTripID) ? 
           null :
           <Document
-            file={`https://from-a-to-b-api.herokuapp.com/api/speculative_trips/${speculativeTripID}.pdf`}
+            file={`${API_URL}/api/speculative_trips/${speculativeTripID}.pdf`}
             onLoadSuccess={this.onDocumentLoadSuccess.bind(this)}
           >
              <Page width={windowWidth * 0.5} pageNumber={this.state.page + 1} />

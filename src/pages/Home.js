@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { IntroArea, VisualArea, Description, PhotoArea, Credits } from '../components';
-import { windowResize, changeData, changeDataStatus, changeSpeculativeTripID } from '../actions';
+import { IntroArea, VisualArea, Description, PhotoArea, Credits, PdfListArea } from '../components';
+import { windowResize, changeData, changeDataStatus, changeSpeculativeTripID, changePdfListIds } from '../actions';
 import axios from 'axios';
 import styled from 'styled-components';
+import { API_URL } from '../constants/defaults';
 
 
 
@@ -19,18 +20,25 @@ class Home extends Component {
 
 
   loadData(){
-    axios.get('https://from-a-to-b-api.herokuapp.com/api/speculative_trips/random.json')
-      .then((response) =>{
-        // debugger;
-        this.props.dispatch(changeData(response.data.result));
-        this.props.dispatch(changeSpeculativeTripID(response.data.id));
+    axios.all([axios.get(`${API_URL}/api/speculative_trips/random.json`), 
+               axios.get(`${API_URL}/api/speculative_trips.json`)])
+    .then(axios.spread((randomResponse, indexResponse) => {
+
+      if (randomResponse.data.success) {
+        this.props.dispatch(changeData(randomResponse.data.result));
+        this.props.dispatch(changeSpeculativeTripID(randomResponse.data.id));
+        
+      } 
+
+
+      if (indexResponse.data.success) {
+        this.props.dispatch(changePdfListIds(indexResponse.data.ids));
         this.props.dispatch(changeDataStatus('loaded'));
-      })
-      .catch((error) => {
-        // handle error
-        // this.loadData();
-        console.log(error);
-      })
+      }
+      
+    }));
+    
+    
       
   }
 
@@ -51,6 +59,7 @@ class Home extends Component {
       <Fragment>
         <IntroArea />
         <VisualArea />
+        <PdfListArea />
         <Description />
         <PhotoArea />
         <Credits />

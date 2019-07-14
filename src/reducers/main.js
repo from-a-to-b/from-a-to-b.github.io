@@ -7,6 +7,11 @@ export default function screenReducer(state = DEFAULT_STATE, action){
         ...state,
         speculativeTripID: action.payload.speculativeTripID
       }
+    case "CHANGE_PDF_LIST_IDS": 
+      return {
+        ...state,
+        pdfListIds: action.payload.pdfListIds
+      }
     case "WINDOW_RESIZE":
       return {
         ...state,

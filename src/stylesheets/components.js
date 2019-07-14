@@ -10,10 +10,17 @@ const FullContainer = styled.section`
 
 const Column = styled.div`
   width: calc(50% - 25px);
-
+  ul {
+    max-width: 600px;
+    list-style: circle;
+  }
+  li {
+    font-size:1.1em;
+    margin-bottom: 15px;
+  }
   p { 
     font-size:1.2em;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     max-width: 600px;
   }
 
