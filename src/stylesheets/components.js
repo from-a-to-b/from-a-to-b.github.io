@@ -10,7 +10,7 @@ const FullContainer = styled.section`
 
   ${media.babybear`
     display:block;
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
   `}
 
 `;
@@ -20,6 +20,10 @@ const Column = styled.div`
   ul {
     max-width: 600px;
     list-style: circle;
+
+    ${media.babybear`
+      list-style: circle inside;
+    `}
   }
   li {
     font-size:1.1em;
@@ -38,7 +42,7 @@ const Column = styled.div`
 
   ${media.babybear`
     margin-bottom: 20px;
-    width: 100%;
+    width: calc(100% - 20px);
   `}
 `;
 
