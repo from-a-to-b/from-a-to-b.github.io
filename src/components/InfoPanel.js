@@ -4,6 +4,7 @@ import _ from 'lodash';
 import styled from 'styled-components';
 import moment from 'moment';
 import { heightPercentage } from '../constants/defaults';
+import media from '../stylesheets/media';
 
 const Fragment = React.Fragment;
 const Container = styled.div`
@@ -13,6 +14,11 @@ const Container = styled.div`
   z-index: 9;
   width: calc(50% - 40px);
   line-height: 1.9;
+
+
+  ${media.babybear`
+    width: calc(100% - 20px);
+  `}
 `;
 
 const DescSection = styled.div`

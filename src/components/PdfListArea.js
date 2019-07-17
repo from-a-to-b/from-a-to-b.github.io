@@ -22,7 +22,10 @@ const Title = styled.div`
 
 class PdfListArea extends Component {
   render() {
-    let { pdfListIds } = this.props;
+    let { pdfListIds, windowWidth } = this.props;
+
+    let pdfListIds2 = windowWidth > 700 ? pdfListIds : pdfListIds.splice(0, 5);
+
     return (
       <Fragment>
         <Title>
@@ -31,7 +34,7 @@ class PdfListArea extends Component {
         <Container>
           
           { 
-            _.map(pdfListIds, id => { 
+            _.map(pdfListIds2, id => { 
 
               return(
                 <ThumbPDF id={id} key={id} />

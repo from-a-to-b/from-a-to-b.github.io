@@ -4,12 +4,17 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { Document, Page, pdfjs } from "react-pdf";
 import { API_URL } from '../constants/defaults';
+import media from '../stylesheets/media';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 
 const Container = styled.div`
   width: 50%;
+
+  ${media.babybear`
+    width: 100%;
+  `}
 `;
 
 class PdfArea extends Component {
@@ -41,7 +46,9 @@ class PdfArea extends Component {
 
   render() {
     let { speculativeTripID, windowWidth } = this.props;
-    console.log(this.state.page + 1);
+    // console.log(this.state.page + 1);
+    let width = windowWidth > 700 ? windowWidth * 0.5 : windowWidth;
+
     return (
       <Container>
         { 
@@ -51,7 +58,7 @@ class PdfArea extends Component {
             file={`${API_URL}/api/speculative_trips/${speculativeTripID}.pdf`}
             onLoadSuccess={this.onDocumentLoadSuccess.bind(this)}
           >
-             <Page width={windowWidth * 0.5} pageNumber={this.state.page + 1} />
+             <Page width={width} pageNumber={this.state.page + 1} />
           </Document>
           
         } 

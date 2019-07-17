@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import { FullContainer, Column } from '../stylesheets/components';
+import media from '../stylesheets/media';
 
 const TextWrappper = styled.div`
   width: 300px;
@@ -16,6 +17,11 @@ const IntroColumn = styled.div`
   h1, p {
     font-size: 1.3em;
   }
+
+  ${media.babybear`
+    margin-bottom: 20px;
+    width: 100%;
+  `}
 `;
 
 class IntroArea extends Component {

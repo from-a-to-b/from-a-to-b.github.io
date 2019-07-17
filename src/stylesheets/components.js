@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 import mixins from './mixins';
+import media from './media';
 
 const FullContainer = styled.section`
   padding: 20px;
   width: calc(100% - 40px);
   display: flex;
   justify-content: space-between;
+
+  ${media.babybear`
+    display:block;
+    width: calc(100% - 20px);
+  `}
+
 `;
 
 const Column = styled.div`
@@ -28,6 +35,11 @@ const Column = styled.div`
     text-decoration: underline;
     text-decoration-color: #777;
   }
+
+  ${media.babybear`
+    margin-bottom: 20px;
+    width: 100%;
+  `}
 `;
 
 const Container = styled.section`

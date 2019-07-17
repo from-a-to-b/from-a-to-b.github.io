@@ -6,6 +6,7 @@ import { changeData, changeSpeculativeTripID, changeDataStatus } from '../action
 import { FullContainer } from '../stylesheets/components';
 import { MapContainer, InfoPanel, LoadingPanel, PdfArea } from '../components';
 import { API_URL } from '../constants/defaults';
+import media from '../stylesheets/media';
 
 const Fragment = React.Fragment;
 const ColorBack = styled.div`
@@ -15,6 +16,11 @@ const ColorBack = styled.div`
   left: 0;
   top: 0;
   width: 50%;
+
+  ${media.babybear`
+    width: 100%;
+  `}
+
 `;
 
 const BlackBox = styled.div`
@@ -24,11 +30,19 @@ const BlackBox = styled.div`
   left:0;
   top:0;
   width:50%;
+
 `;
 
 const Container = styled.div`
   position: relative;
   display: flex;
+
+  ${media.babybear`
+    margin-bottom: 20px;
+    width: 100%;
+    display:block;
+  `}
+
 `;
 
 class VisualArea extends Component {
@@ -61,6 +75,8 @@ class VisualArea extends Component {
     let { dataStatus, windowHeight } = this.props;
     // let seqKey;
     let backgroundColor, blendMode;
+
+    let height = this.props.windowWidth > 700 ? (645 * this.props.windowWidth * 0.5 / 499) : this.props.windowHeight;
 
     // if (!_.isNull(this.props.data)) {
     //   seqKey = this.props.currentIdx % this.props.data.pois.length;
@@ -95,7 +111,7 @@ class VisualArea extends Component {
             <LoadingPanel />
           }
           <ColorBack style={{ 
-            height:  645 * this.props.windowWidth * 0.5 / 499,
+            height: height,
             backgroundColor: backgroundColor,
             opacity: dataStatus === 'loaded' ? 1 : 0.8,
             mixBlendMode: blendMode

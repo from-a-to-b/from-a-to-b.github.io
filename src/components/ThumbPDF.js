@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { Document, Page, pdfjs } from "react-pdf";
 import { API_URL } from '../constants/defaults';
+import media from '../stylesheets/media';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -20,6 +21,12 @@ const Wrap = styled.div`
   width: calc(25% - 40px);
   margin-bottom: 40px;
   position: relative;
+
+  ${media.babybear`
+    display:block;
+    width: 100%;
+  `}
+
 `;
 const ButtonsArea = styled.div`
   display: flex;
@@ -67,7 +74,7 @@ class ThumbPDF extends Component {
 
   render() {
     let { id, windowWidth } = this.props;
-
+    var width = windowWidth > 700 ? (windowWidth - 40) * 0.25 - 40 : windowWidth - 40;
     return (
       <Wrap>
   
@@ -76,7 +83,7 @@ class ThumbPDF extends Component {
             file={`${API_URL}/api/speculative_trips/${id}.pdf`}
             onLoadSuccess={this.onDocumentLoadSuccess.bind(this)}
           >
-              <Page width={(windowWidth - 40) * 0.25 - 40} pageNumber={this.state.page + 1} />
+              <Page width={width} pageNumber={this.state.page + 1} />
           </Document>
           
         </Container>

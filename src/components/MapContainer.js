@@ -4,9 +4,15 @@ import { heightPercentage } from '../constants/defaults';
 import styled from 'styled-components';
 import * as turf from 'turf';
 import _ from 'lodash';
+import media from '../stylesheets/media';
 
 const MapDiv = styled.div`
   width: 50%;
+
+  ${media.babybear`
+    width: 100%;
+  `}
+
 `;
 
 class MapContainer extends Component {
@@ -160,9 +166,10 @@ class MapContainer extends Component {
 
 
   render() {
+    let height = this.props.windowWidth > 700 ? (645 * this.props.windowWidth * 0.5 / 499) : this.props.windowHeight;
+    
     return (
-      <MapDiv ref={c => { this.refsMapContainer = c; }} style={{ height: 
-        645 * this.props.windowWidth * 0.5 / 499 }} className="map-container">
+      <MapDiv ref={c => { this.refsMapContainer = c; }} style={{ height: height }} className="map-container">
       </MapDiv>
     );
   }
