@@ -17,7 +17,7 @@ const Container = styled.div`
 
 
   ${media.babybear`
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
   `}
 `;
 

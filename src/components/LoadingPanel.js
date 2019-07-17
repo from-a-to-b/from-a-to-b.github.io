@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { heightPercentage } from '../constants/defaults';
+import media from '../stylesheets/media';
 
 const Container = styled.div`
   position:absolute;
@@ -18,6 +19,12 @@ const DescSection = styled.div`
   background-color: black;
   color: white;
   font-size:1.2em;
+  
+  ${media.babybear`
+    display:block;
+    width: calc(100% - 40px);
+  `}
+
 `;
 
 const Gutter = styled.div`
