@@ -24,7 +24,7 @@ class PdfListArea extends Component {
   render() {
     let { pdfListIds, windowWidth } = this.props;
 
-    let pdfListIds2 = windowWidth > 700 ? pdfListIds : pdfListIds.splice(0, 5);
+    // let pdfListIds2 = windowWidth > 700 ? pdfListIds : pdfListIds.splice(0, 5);
 
     return (
       <Fragment>
@@ -34,7 +34,7 @@ class PdfListArea extends Component {
         <Container>
           
           { 
-            _.map(pdfListIds2, id => { 
+            _.map(pdfListIds, id => { 
 
               return(
                 <ThumbPDF id={id} key={id} />
