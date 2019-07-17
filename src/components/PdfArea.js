@@ -14,6 +14,7 @@ const Container = styled.div`
 
   ${media.babybear`
     width: 100%;
+    overflow:hidden;
   `}
 `;
 
@@ -47,7 +48,7 @@ class PdfArea extends Component {
   render() {
     let { speculativeTripID, windowWidth } = this.props;
     // console.log(this.state.page + 1);
-    let width = windowWidth > 700 ? windowWidth * 0.5 : windowWidth;
+    let width = windowWidth > 700 ? windowWidth * 0.5 : windowWidth ;
 
     return (
       <Container>

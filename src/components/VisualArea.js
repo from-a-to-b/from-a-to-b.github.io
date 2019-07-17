@@ -76,7 +76,7 @@ class VisualArea extends Component {
     // let seqKey;
     let backgroundColor, blendMode;
 
-    let height = this.props.windowWidth > 700 ? (645 * this.props.windowWidth * 0.5 / 499) : this.props.windowHeight;
+    let height = this.props.windowWidth > 700 ? (645 * this.props.windowWidth * 0.5 / 499) : this.props.windowHeight - 200;
 
     // if (!_.isNull(this.props.data)) {
     //   seqKey = this.props.currentIdx % this.props.data.pois.length;

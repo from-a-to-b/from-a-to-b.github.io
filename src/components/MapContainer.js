@@ -166,7 +166,7 @@ class MapContainer extends Component {
 
 
   render() {
-    let height = this.props.windowWidth > 700 ? (645 * this.props.windowWidth * 0.5 / 499) : this.props.windowHeight;
+    let height = this.props.windowWidth > 700 ? (645 * this.props.windowWidth * 0.5 / 499) : this.props.windowHeight - 200;
     
     return (
       <MapDiv ref={c => { this.refsMapContainer = c; }} style={{ height: height }} className="map-container">

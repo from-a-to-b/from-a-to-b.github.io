@@ -25,6 +25,7 @@ const Wrap = styled.div`
   ${media.babybear`
     display:block;
     width: 100%;
+    overflow:hidden;
   `}
 
 `;
