@@ -1,0 +1,14 @@
+List of hardware for From Point A to Point B by Achim Koh and Wonyoung So, exhibited at Data Through Design (March 2019)
+
+- Apple Mac Mini, 4-Core (1)
+- Optoma EH200ST 3000 lumens short-throw projector (1)
+- Brother HL-L2370DW Laser Printer (1)
+- Makey Makey Go (1)
+- Arcade-style push button, 100mm diameter, with LED (1)
+- Arduino Uno (1)
+- 12v power supply (1)
+- Jump wires, alligator clips
+- Swingline Long Reach Stapler
+- USB keyboard and mouse (for configuration)
+- Power strip
+- Wooden display table/pedestal (provided by organizers)

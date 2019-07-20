@@ -66,7 +66,10 @@ body, div, p, ol, li {
   text-rendering: optimizeLegibility;
 }
 
-
+/* Italicize titles of works */
+cite {
+  font-style: italic;
+}
 
 
 input {  

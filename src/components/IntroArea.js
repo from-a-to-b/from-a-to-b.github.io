@@ -39,7 +39,7 @@ class IntroArea extends Component {
         <IntroColumn>
           <TextWrappper>
             <p>
-              From Point A to Point B generates fictional accounts of real trips taken by real people that exist in public data sets. 
+              <cite>From Point A to Point B</cite> generates fictional accounts of real trips taken by real people that exist in public data sets. 
             </p>
           </TextWrappper>
         </IntroColumn>
