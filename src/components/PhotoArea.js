@@ -25,16 +25,19 @@ class PhotoArea extends Component {
       <SliderContainer>
         <Carousel>
           <PhotoContainer>
-            <img src={`${process.env.PUBLIC_URL}/photos/01.jpg`} alt="photo" />
+            <img src={`${process.env.PUBLIC_URL}/photos/01.jpg`} alt="Installation view of From Point A to Point B" />
           </PhotoContainer>
           <PhotoContainer>
-            <img src={`${process.env.PUBLIC_URL}/photos/02.jpg`} alt="photo" />
+            <img src={`${process.env.PUBLIC_URL}/photos/02.jpg`} alt="Installation view of From Point A to Point B" />
           </PhotoContainer>
           <PhotoContainer>
-            <img src={`${process.env.PUBLIC_URL}/photos/03.jpg`} alt="photo" />
+            <img src={`${process.env.PUBLIC_URL}/photos/03.jpg`} alt="Installation view of From Point A to Point B. Print-outs of generated fictions displayed on a table" />
           </PhotoContainer>
           <PhotoContainer>
-            <img src={`${process.env.PUBLIC_URL}/photos/04.jpg`} alt="photo" />
+            <img src={`${process.env.PUBLIC_URL}/photos/04.jpg`} alt="Installation view of From Point A to Point B" />
+          </PhotoContainer>
+          <PhotoContainer>
+            <img src={`${process.env.PUBLIC_URL}/photos/05.jpg`} alt="Installation view of From Point A to Point B" />
           </PhotoContainer>
         </Carousel>
       </SliderContainer>
