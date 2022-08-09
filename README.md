@@ -1,3 +1,10 @@
+node -v
+v10.15.1
+yarn -v
+1.22.17
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
