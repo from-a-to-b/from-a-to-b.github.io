@@ -12,7 +12,7 @@ export const DEFAULT_STATE = {
   pdfListIds: []
 };
 
-export const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:8080" : "https://from-a-to-b-api.wonyoung.so"
+export const API_URL = "https://from-a-to-b-api.dfprod.dataplusfeminism.mit.edu"
 export const heightPercentage = 0.5;
 
 // 1448928000
